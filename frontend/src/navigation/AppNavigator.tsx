@@ -11,6 +11,7 @@ import ChatScreen from '../screens/ChatScreen';
 import GoalsScreen from '../screens/GoalsScreen';
 import EMIScreen from '../screens/EMIScreen';
 import SMSSyncScreen from '../screens/SMSSyncScreen';
+import TransactionsScreen from '../screens/TransactionsScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 
@@ -19,6 +20,7 @@ const Stack = createStackNavigator();
 
 const TAB_ICONS: Record<string, string> = {
   Dashboard: '🏠',
+  Transactions: '💰',
   SMS: '💬',
   Goals: '🎯',
   EMI: '📊',
@@ -45,6 +47,7 @@ function MainTabs() {
       })}
     >
       <Tab.Screen name="Dashboard" component={DashboardScreen} />
+      <Tab.Screen name="Transactions" component={TransactionsScreen} />
       <Tab.Screen name="SMS" component={SMSSyncScreen} options={{ headerTitle: 'SMS Sync' }} />
       <Tab.Screen name="Goals" component={GoalsScreen} />
       <Tab.Screen name="EMI" component={EMIScreen} />
