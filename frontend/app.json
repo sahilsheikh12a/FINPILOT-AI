@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "FinPilot AI",
+    "slug": "finpilot-ai",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0F0E1A"
+      },
+      "package": "com.finpilot.ai",
+      "permissions": [
+        "android.permission.READ_SMS",
+        "android.permission.RECEIVE_SMS"
+      ]
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.finpilot.ai"
+    },
+    "plugins": [
+      "expo-asset",
+      "expo-dev-client"
+    ]
+  }
+}

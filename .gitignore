@@ -1,0 +1,42 @@
+.expo/
+
+# Environment / secrets — never commit these
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Node / React Native
+node_modules/
+npm-debug.log*
+yarn-error.log
+.metro-health-check*
+
+# Android / iOS build artifacts (after prebuild)
+android/build/
+android/app/build/
+android/.gradle/
+ios/Pods/
+ios/build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
