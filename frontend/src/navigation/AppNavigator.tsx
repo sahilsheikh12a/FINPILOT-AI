@@ -12,6 +12,7 @@ import GoalsScreen from '../screens/GoalsScreen';
 import EMIScreen from '../screens/EMIScreen';
 import SMSSyncScreen from '../screens/SMSSyncScreen';
 import TransactionsScreen from '../screens/TransactionsScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 
@@ -25,6 +26,7 @@ const TAB_ICONS: Record<string, string> = {
   Goals: '🎯',
   EMI: '📊',
   Chat: '🤖',
+  Profile: '👤',
 };
 
 function MainTabs() {
@@ -52,6 +54,7 @@ function MainTabs() {
       <Tab.Screen name="Goals" component={GoalsScreen} />
       <Tab.Screen name="EMI" component={EMIScreen} />
       <Tab.Screen name="Chat" component={ChatScreen} options={{ headerTitle: 'AI Finance Copilot' }} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
 }
