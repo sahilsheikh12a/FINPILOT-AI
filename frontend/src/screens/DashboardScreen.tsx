@@ -102,14 +102,14 @@ export default function DashboardScreen({ navigation }: any) {
           <Text style={styles.greeting}>Good {now.hour() < 12 ? 'Morning' : now.hour() < 17 ? 'Afternoon' : 'Evening'} 👋</Text>
           <Text style={styles.month}>{now.format('MMMM YYYY')}</Text>
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('Alerts')} style={styles.alertBtn}>
+        <View style={styles.alertBtn}>
           <Text style={styles.alertIcon}>🔔</Text>
           {unreadAlerts > 0 && (
             <View style={styles.badge}>
               <Text style={styles.badgeText}>{unreadAlerts}</Text>
             </View>
           )}
-        </TouchableOpacity>
+        </View>
       </View>
 
       {/* Budget Card */}
@@ -135,15 +135,16 @@ export default function DashboardScreen({ navigation }: any) {
           </View>
         </Card>
       ) : (
-        <TouchableOpacity onPress={() => navigation.navigate('Budget')} style={styles.noBudgetCard}>
-          <Text style={styles.noBudgetText}>+ Set up your monthly budget</Text>
-        </TouchableOpacity>
+        <View style={styles.noBudgetCard}>
+          <Text style={styles.noBudgetText}>No budget set for this month</Text>
+          <Text style={styles.noBudgetSub}>Budget setup coming soon</Text>
+        </View>
       )}
 
       {/* Quick Actions */}
       <View style={styles.quickActions}>
         {[
-          { icon: '➕', label: 'Add Expense', screen: 'AddTransaction' },
+          { icon: '💰', label: 'Transactions', screen: 'Transactions' },
           { icon: '🤖', label: 'AI Chat', screen: 'Chat' },
           { icon: '🎯', label: 'Goals', screen: 'Goals' },
           { icon: '📊', label: 'EMI', screen: 'EMI' },
@@ -226,8 +227,9 @@ const styles = StyleSheet.create({
   progressFill: { height: '100%', borderRadius: 4 },
   progressLabels: { flexDirection: 'row', justifyContent: 'space-between', marginTop: 4 },
   progressText: { color: Colors.textMuted, fontSize: FontSize.xs },
-  noBudgetCard: { backgroundColor: Colors.surfaceLight, borderRadius: BorderRadius.lg, padding: Spacing.lg, alignItems: 'center', marginBottom: Spacing.md, borderWidth: 1, borderColor: Colors.primary, borderStyle: 'dashed' },
-  noBudgetText: { color: Colors.primary, fontSize: FontSize.md, fontWeight: '600' },
+  noBudgetCard: { backgroundColor: Colors.surfaceLight, borderRadius: BorderRadius.lg, padding: Spacing.lg, alignItems: 'center', marginBottom: Spacing.md, borderWidth: 1, borderColor: Colors.border },
+  noBudgetText: { color: Colors.text, fontSize: FontSize.md, fontWeight: '600' },
+  noBudgetSub: { color: Colors.textMuted, fontSize: FontSize.xs, marginTop: 4 },
   quickActions: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: Spacing.md },
   quickBtn: { backgroundColor: Colors.surfaceLight, borderRadius: BorderRadius.md, padding: Spacing.md, alignItems: 'center', flex: 1, marginHorizontal: 4 },
   quickIcon: { fontSize: 22, marginBottom: 4 },
